@@ -1,0 +1,10 @@
+//- components/education-list.pug
+include education-item.pug
+
+section.education
+  h2.title-2 Education
+
+  //- education-item (company,position,dates)
+  +education-item('CEEP', 'Técnico Superior en Desarrollo de Aplicaciones Informáticas', 'Oct 2001 - Mar 2003')
+  
+  include additional-training.pug

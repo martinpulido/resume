@@ -1,0 +1,22 @@
+//- components/experience-item.pug
+mixin experience-item (company,position,dateInit,dateEnd,description,projects,tags)
+  article.experience__item
+    header
+      h1.title-3=company + " / "
+        span.experience__item__position=position
+      h2.dates= "("
+        time(datetime=dateInit.datetime)=dateInit.name + " - "
+        time(datetime=dateEnd.datetime)=dateEnd.name + ")"
+    .wysiwyg
+      p= description
+      p Proyectos destacados:
+      ul.projects
+        each project in projects
+          li.project__item
+            strong= project.name + " / "
+            a(href=project.url, target="_blank", title="Abre enlace externo en ventana nueva")=project.url
+
+    h3.hide Habilidades
+    ul.tags
+      each tag in tags
+        li.tag__item= tag
