@@ -26,43 +26,124 @@ em, i { font-style: italic; }
 .cl:after { clear: both; }
 
 
-html { font: normal 62.5% $roboto; }
+html { font: normal 62.5% Arial, Helvetica, sans-serif; }
 body { font-size: 1.6rem; text-align: center; }
 
-html, body {
-  position: relative;
-  height: 100%;
-  overflow-x: hidden;
-  &.not-overflow {
-    position: relative;
-  }
+body {
+    /*background: blue url('../img/resume.jpg') 50% 1rem no-repeat;*/
 }
 
-.overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  display: block;
-  width: 100%;
-  height: 100%;
-  background: rgba($white, 0);
-  transition: background .2s linear;
+.wysiwyg {
+    font-family: $cambria;
+    font-size: 1.6rem;
+    line-height: 1.4;
+    color: $resume-gray;
 
-  &.open {
-    z-index: 1;
-    background: rgba($white, .8);
-    transition: background .2s linear;
-  }
+    p {
+        margin-bottom: $gap;
+
+        &.list__item {
+            margin-bottom: 0;
+            line-height: 1.3;
+        }
+    }
+
+    a {
+        border-bottom: solid 1px $resume-blue;
+        color: $resume-blue;
+        text-decoration: none;
+    }
+
+    ul {
+        margin-top: ($gap*1.5);
+        margin-bottom: ($gap*1.5);
+        list-style-type: none;
+
+        li {
+            position: relative;
+            padding-left: 1.5em;
+
+            &:not(:last-child){
+                margin-bottom: .5em;
+            }
+
+            &:before {
+                content: '■';
+                position: absolute;
+                top: .4em;
+                left: 0;
+                font-size: 1rem;
+                color: $resume-blue;
+            }
+
+            p {
+                margin-bottom: 0;
+            }
+        }
+    }
 }
 
-.category-one-star,
-.category-two-stars,
-.category-three-stars,
-.category-four-stars,
-.category-five-stars { display: inline-block; width: 10.5rem; height: 1.5rem; background: url(../img/sprite-stars.png) 0 0 no-repeat; text-indent: -9999em; }
-  .category-one-star { background-position: 0 -60px }
-  .category-two-stars { background-position: 0 -45px }
-  .category-three-stars { background-position: 0 -30px }
-  .category-four-stars { background-position: 0 -15px }
-  .category-five-stars { background-position: 0 0px }
+.title-2, .title-3 {
+    margin-bottom: $gap;
+    font-family: 'Open Sans';
+    color: $resume-blue;
+    text-transform: uppercase;
+
+    & + .dates {
+        margin-top: -$gap;
+    }
+}
+
+.title-2 {
+    font-size: 2.2rem;
+    font-weight: 800;
+}
+
+.title-3 {
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.03em;
+    line-height: 1.3;
+
+    .experience__item__position {
+        font-weight: 100;
+    }
+
+    &-2 {
+        font-style: italic;
+    }
+}
+
+.dates {
+    margin-bottom: $gap;
+    font-family: 'Open Sans';
+    font-size: 1.4rem;
+    font-weight: 100;
+    color: $resume-gray-light;
+    text-transform: uppercase
+}
+
+.tags {
+    margin-bottom: ($gap*1.5);
+    font-family: $cambria;
+    color: $resume-gray-light;
+    list-style-type: none;
+}
+.tag__item {
+    display: inline-block;
+
+    &:not(:last-child) {
+        position: relative;
+        margin-right: .7rem;
+        padding-right: 1.3rem; 
+
+        &:after {
+            content: "/";
+            position: absolute;
+            right: 0;
+        }
+    }
+    
+
+    
+}

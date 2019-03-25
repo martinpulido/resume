@@ -1,0 +1,66 @@
+.personal {
+    text-align: center;
+
+    @media screen and (min-width: $tablet) {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__fullname {
+        display: inline-block;
+        margin-bottom: $gap;
+        font-family: "Open Sans";
+        font-size: 3rem;
+        font-weight: 100;
+        color: $resume-gray-light;
+    }
+
+    &__position {
+        display: block;
+        font-weight: 600;
+        font-size: .65em;
+        text-transform: uppercase;
+        color: $resume-blue;
+    }
+    
+    &__photo {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+        margin-bottom: $gap;
+        border-radius: 50%;
+        width: 14rem;
+
+        @media screen and (min-width: $desktop) {
+            
+        }
+    }
+
+    &__contact {
+        font-style: italic;
+        list-style: none;
+
+        &__item {
+            margin-bottom: $gap/2;
+        }
+
+        a {
+            display: inline-block;
+            border-bottom: solid 1px transparent;
+            color: $resume-gray;
+            text-decoration: none;
+            transition: border-color .3s;
+
+            &:hover {
+                border-bottom: solid 1px $resume-gray;
+                transition: border-color .3s;
+            }
+        }
+
+        @media screen and (min-width: $tablet) {
+            text-align: left; 
+        }
+    }
+}

@@ -1,10 +1,7 @@
 .wrapper { 
   margin: 0 auto;
-  max-width: 194rem;
+  padding-right: $gap*2;
+  padding-left: $gap*2;
+  max-width: 90rem;
   text-align: left;
-}
-@media (min-width: $tablet){
-  .wrapper {
-    padding: 0 3rem;
-  }
 }
